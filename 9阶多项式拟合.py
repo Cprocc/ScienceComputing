@@ -20,4 +20,4 @@ plot2 = plt.plot(x_array, y_val, "r")
 
 # 预估2010年的石油量
 print(p1(2010))
-plt.show()
+plt.savefig("9阶多项式拟合.png")

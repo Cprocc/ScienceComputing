@@ -142,4 +142,4 @@ y1 = a11*x + a10
 plt.plot(x, y1, color="blue", label="ax+b")
 
 plt.legend()
-plt.show()
+plt.savefig("最小二乘法321.png")
