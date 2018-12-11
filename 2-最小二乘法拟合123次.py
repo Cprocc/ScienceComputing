@@ -17,9 +17,7 @@ y_array = np.array([67.052, 68.008, 69.803, 72.024, 73.400, 72.063, 74.669, 74.4
 def aim_func1(p, x):
     """
     一次多项式拟合的方程
-    :param p:
-    :param x:
-    :return:
+
     """
     a1, a0 = p
     return a1*x + a0
@@ -142,4 +140,4 @@ y1 = a11*x + a10
 plt.plot(x, y1, color="blue", label="ax+b")
 
 plt.legend()
-plt.savefig("最小二乘法321.png")
+plt.savefig("2-最小二乘法拟合123次曲线.png")
