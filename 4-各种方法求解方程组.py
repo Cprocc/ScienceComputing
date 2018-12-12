@@ -86,6 +86,13 @@ def gauss_seidel(n):
     return x
 
 
+def inner_product(a, b):
+    temp = 0
+    for i in range(len(a)):
+        temp += a[i]*b[i]
+    return temp
+
+
 def c_g(n):
     a = np.zeros((n, n))
     b = np.ones((n, 1))
@@ -94,7 +101,30 @@ def c_g(n):
         for j in range(n):
             a[i][j] = 1 / (i + 1 + j + 1 - 1)
     # 初始解x0 = (0,0,0...共n个0)
+    r0 = np.zeros((n, 1))
     x = np.ones((n, 1))
+    r = b - np.dot(a, x)
+    p = r
+    time = 0
+    while True:
+        if (r == r0).all():
+            print("C-G法迭代了 " + str(time) + " 次 ")
+            return x
+        else:
+            ap = np.dot(a, p)
+            if inner_product(p, ap) == 0:
+                print("C-G法迭代了 " + str(time) + " 次 ")
+                return x
+            else:
+                alpha = inner_product(r, r)/(inner_product(p, ap))
+                x1 = x + alpha*p
+                r1 = r - alpha*ap
+                beat = inner_product(r1, r1)/inner_product(r, r)
+                p1 = r1 + beat*p
+        r = copy.copy(r1)
+        x = copy.copy(x1)
+        p = copy.copy(p1)
+        time += 1
 
 
 if __name__ == '__main__':
@@ -102,6 +132,6 @@ if __name__ == '__main__':
     # print(gauss(8))
     # jacobi(4)
     # gauss_seidel(4)
-    pass
+    print(c_g(4))
 
 
