@@ -77,7 +77,7 @@ def gauss_seidel(n):
             a[i][j] = 1/(i+1+j+1-1)
     # 初始解x0 = (0,0,0...共n个0)
     x = np.ones((n, 1))
-    for _ in range(7000):
+    for _ in range(100000):
         for i in range(n):
             temp = 0
             for j in range(n):
@@ -130,8 +130,10 @@ def c_g(n):
 if __name__ == '__main__':
     # print(gauss(4))
     # print(gauss(8))
-    # jacobi(4)
-    # gauss_seidel(4)
+    # # jacobi(4)
+    # # jacobi(8)
+    # print(gauss_seidel(4))
+    print(gauss_seidel(8))
     print(c_g(4))
-
+    print(c_g(8))
 

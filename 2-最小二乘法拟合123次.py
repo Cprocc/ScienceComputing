@@ -9,7 +9,6 @@ from scipy.optimize import leastsq
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 x_array = np.arange(1994, 2004, 1)
 y_array = np.array([67.052, 68.008, 69.803, 72.024, 73.400, 72.063, 74.669, 74.487, 74.065, 76.777])
 
@@ -17,7 +16,6 @@ y_array = np.array([67.052, 68.008, 69.803, 72.024, 73.400, 72.063, 74.669, 74.4
 def aim_func1(p, x):
     """
     一次多项式拟合的方程
-
     """
     a1, a0 = p
     return a1*x + a0
