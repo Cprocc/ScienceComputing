@@ -1,8 +1,3 @@
-"""
-高次插值因舍入误差而产生的runge现象
-2010年的估计值为249.7,很不理想
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 
